@@ -10,23 +10,22 @@
     <nav class="bg-blue border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
-                                <!-- Logo -->
+
                 <div class="flex items-center">
                     <a href="{{ route('home') }}" class="flex items-center">
-                        <img src="img\LogoCK.jpg" alt="Logo" class="h-14 w-auto">
+                        <img src="img/LogoCK.jpg" alt="Logo" class="h-14 w-14 rounded-full">
                     </a>
                 </div>
 
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="{{ route('home') }}" class="text-gray-700 hover:text-blue-500 font-medium">Home</a>
-                    <a href="##beneficios" class="text-gray-700 hover:text-blue-500 font-medium">Beneficios</a>
-                    <a href="#atencion" class="text-gray-700 hover:text-blue-500 font-medium">Atencion</a>
-                    <a href="#reservar" class="text-gray-700 hover:text-blue-500 font-medium">Reservar</a>
-                    <a href="#especialidades" class="text-gray-700 hover:text-blue-500 font-medium">Especialidades</a>
-                    <a href="{{ route('historial') }}" class="text-gray-700 hover:text-blue-500 font-medium">Historial</a>
-                    <a href="{{ route('register') }}" class="text-gray-700 hover:text-blue-500 font-medium">Registrarse</a>
+                    <a href="{{ route('home') }}" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Home</a>
+                    <a href="#beneficios" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Beneficios</a>
+                    <a href="#atencion" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Atencion</a>
+                    <a href="#reservar" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Reservar</a>
+                    <a href="#especialidades" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Especialidades</a>
+                    <a href="{{ route('historial') }}" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Historial</a>
+                    <a href="{{ route('register') }}" class="text-white font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Registrarse</a>
                 </div>
-
                                 <!-- Menú de usuario -->
                 <div class="relative flex items-center space-x-4">
                     <!-- Botón para mostrar el dropdown -->

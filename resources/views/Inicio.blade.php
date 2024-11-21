@@ -1,25 +1,25 @@
 <x-layout>
-<section class="flex flex-col md:flex-row items-center justify-between bg-gray-50 p-6 md:p-12">
-    <div class="w-full md:w-1/2 flex justify-center md:justify-start">
-        <img src="img\Coral-Kids_img01.jpg" alt="Consultorio Virtual" class="w-3/4 md:w-full rounded-lg shadow-lg">
+<section class="relative flex items-center justify-center text-white h-[500px]">
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img\CoralKids_Img001.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-white opacity-80"></div>
     </div>
 
-    <div class="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
-        <h2 class="text-blue-600 text-lg font-semibold"> CONSULTORIO PEDIATRICO</h2>
-        <h1 class="text-4xl font-bold text-cyan-800"> CORAL KIDS</h1>
-        
-        <p class="text-blue-600 mt-4"> Programa tu consulta en las especialidades pediatricas</p>
-        
+    <div class="relative z-10 max-w-4xl text-center md:text-left px-6 md:px-12">
+        <h2 class="text-blue-200 text-lg font-semibold">CONSULTORIO PEDIÁTRICO</h2>
+        <h1 class="text-4xl font-bold text-white">CORAL KIDS</h1>
+        <p class="text-blue-200 mt-4 text-lg">
+            Programa tu consulta en las especialidades pediátricas
+        </p>
         <div class="mt-6">
             <a href="{{ route('reservar') }}" class="bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-200">
                 RESERVAR
             </a>
         </div>
-        
-        <p class="mt-6 text-gray-600">o llámanos al</p>
-        <p class="text-blue-600 font-bold text-xl">999 000 111</p>
+        <p class="mt-6 text-white text-lg">o llámanos al</p>
+        <p class="text-blue-300 font-bold text-xl">999 000 111</p>
     </div>
 </section>
+
 
 </x-layout>   
     <div class="bg-blue-50 py-10">
