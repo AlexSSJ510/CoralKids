@@ -12,7 +12,8 @@
         <a href="{{ route('home') }}" class="btn-salir">Salir</a>
     </div>
     <h1>Historial Clínico de {{ $paciente->nombre }} {{ $paciente->apellido }}</h1>
-    @foreach($historiales as $historial)
+
+    @forelse ($historiales as $historial)
     <table>
         <tr class="section-title">
             <td colspan="4">IDENTIFICACIÓN:</td>
@@ -48,26 +49,24 @@
             <td>{{ $paciente->telefono }}</td>
         </tr>
 
-            <tr class="section-title">
-                <td colspan="4">HISTORIAL MÉDICO #{{ $loop->iteration }}</td>
-            </tr>
-            <tr>
-                <td>Fecha y hora:</td>
-                <td>{{ $historial->fecha }}</td>
-                <td>Diagnóstico:</td>
-                <td>{{ $historial->diagnostico }}</td>
-            </tr>
-            <tr>
-                <td>Tratamiento:</td>
-                <td colspan="3">{{ $historial->tratamiento }}</td>
-            </tr>
-            <tr>
-                <td>Observaciones:</td>
-                <td colspan="3">{{ $historial->observaciones }}</td>
-            </tr>
-    @endforeach
-
-
+        <tr class="section-title">
+            <td colspan="4">HISTORIAL MÉDICO #{{ $loop->iteration }}</td>
+        </tr>
+        <tr>
+            <td>Fecha y hora:</td>
+            <td>{{ $historial->fecha }}</td>
+            <td>Diagnóstico:</td>
+            <td>{{ $historial->diagnostico }}</td>
+        </tr>
+        <tr>
+            <td>Tratamiento:</td>
+            <td colspan="3">{{ $historial->tratamiento }}</td>
+        </tr>
+        <tr>
+            <td>Observaciones:</td>
+            <td colspan="3">{{ $historial->observaciones }}</td>
+        </tr>
+        
         <tr class="section-title">
             <td colspan="4">MOTIVO DE CONSULTA:</td>
         </tr>
@@ -83,5 +82,11 @@
         </tr>
     </table>
     @endforeach
+ 
+    @empty
+        <p>No se encontraron historiales médicos para este paciente.</p>
+    @endforelse
+
+
 </body>
 </html>

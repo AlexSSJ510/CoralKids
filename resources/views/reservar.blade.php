@@ -9,10 +9,10 @@
 <body>
 
 <header>
-    <h1>Realiza tu Reserva</h1>
+    <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Realiza tu Reserva</h1>
 </header>
 
-<div class="container">
+<div class="container" style="background-image: url('img/Coral_Fondo_Form.jpg');">
     <section class="form-section">
         <div class="form-box">
             <form action="{{ route('posts.store') }}" method="POST">
@@ -41,13 +41,22 @@
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" required placeholder="Ingresa mensaje si requiere especificar algo"></textarea><br><br>
         
-                <button type="submit" value="Enviar"> Enviar</button>
-                <button type="button" onclick="window.location.href='{{ url('/') }}'">Cancelar Reserva</button>
-
+                <div class="flex flex-col space-y-2">
+                    <button type="submit" value="Enviar" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"> 
+                        Enviar 
+                    </button>
+                    
+                    <button type="button" onclick="window.location.href='{{ url('/') }}'">
+                        Cancelar Reserva
+                    </button>
+                </div>
             </form>
         </div>
     </section>
 </div>
+
+
+
 
 <footer>
     © 2024 Consultorio Pediátrico Coral Kids - Todos los derechos reservados.

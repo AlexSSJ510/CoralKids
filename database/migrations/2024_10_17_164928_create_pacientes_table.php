@@ -10,16 +10,17 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id'); // Relación con users
             $table->string('nombre', 100);
             $table->string('apellido', 100);
             $table->date('fecha_nacimiento');
             $table->enum('genero', ['Masculino', 'Femenino']);
             $table->string('direccion', 255)->nullable();
             $table->string('telefono', 15)->nullable();
-            $table->string('email', 100)->nullable();
-            $table->string('contraseña', 255);
             $table->string('nombre_padre_tutor', 100)->nullable();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
