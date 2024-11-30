@@ -10,10 +10,12 @@ return new class extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id'); // Relación con users
+            $table->unsignedBigInteger('user_id');
             $table->string('nombre', 100);
             $table->string('apellido', 100);
             $table->date('fecha_nacimiento');
+            $table->integer('edad');
+            $table->string('tipo_sangre',5);
             $table->enum('genero', ['Masculino', 'Femenino']);
             $table->string('direccion', 255)->nullable();
             $table->string('telefono', 15)->nullable();

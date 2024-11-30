@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    @foreach ($pacientes as $paciente )
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historial Clínico de {{ $paciente->nombre }}</title>
-    <link rel="stylesheet" href="{{ asset('css/hist.css') }}">
+    <title>Historial Clínico de {{ $paciente->nombre ?? 'Paciente' }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="header">
-        <a href="{{ route('home') }}" class="btn-salir">Salir</a>
-    </div>
-    <h1>Historial Clínico de {{ $paciente->nombre }} {{ $paciente->apellido }}</h1>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-4">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">Historial Clínico de {{ $paciente->nombre }} {{ $paciente->apellido }}</h1>
+                <a href="{{ route('home') }}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg py-3 px-10 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                    Salir
+                </a>
+        </div>
 
     @forelse ($historiales as $historial)
-    <table>
-        <tr class="section-title">
-            <td colspan="4">IDENTIFICACIÓN:</td>
-        </tr>
-        <tr>
-            <td>Fecha y hora:</td>
-            <td>{{ $historial->fecha }}</td>
-            <td>DNI:</td>
-            <td>{{ $paciente->id }}</td>
-        </tr>
-        <tr>
-            <td>Nombre del paciente:</td>
-            <td>{{ $paciente->nombre }}</td>
-            <td>Apellido del paciente:</td>
-            <td>{{ $paciente->apellido }}</td>
-        </tr>
-        <tr>
-            <td>Género:</td>
-            <td>{{ $paciente->genero }}</td>
-            <td>Tipo de sangre:</td>
-            <td>{{ $paciente->tipo_sangre }}</td>
-        </tr>
-        <tr>
-            <td>Fecha de Nacimiento:</td>
-            <td>{{ $paciente->fecha_nacimiento }}</td>
-            <td>Edad:</td>
-            <td>{{ $paciente->edad }}</td>
-        </tr>
-        <tr>
-            <td>Residencia:</td>
-            <td>{{ $paciente->direccion }}</td>
-            <td>Numero de Telefono actual:</td>
-            <td>{{ $paciente->telefono }}</td>
-        </tr>
+        <div class="bg-white shadow rounded-lg p-6 mb-6">
+            <h2 class="text-lg font-semibold mb-4 text-gray-700">Identificación</h2>
+            <table class="table-auto w-full text-sm text-left border-collapse border border-gray-200">
+                <tbody>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Fecha y hora:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $historial->fecha }}</td>
+                        <td class="font-medium border border-gray-200 px-4 py-2">DNI:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->id }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Nombre:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->nombre }}</td>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Apellido:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->apellido }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Género:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->genero }}</td>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Tipo de sangre:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->tipo_sangre }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Fecha de Nacimiento:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->fecha_nacimiento }}</td>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Edad:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->edad }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Residencia:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->direccion }}</td>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Teléfono:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $paciente->telefono }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <tr class="section-title">
-            <td colspan="4">HISTORIAL MÉDICO #{{ $loop->iteration }}</td>
-        </tr>
-        <tr>
-            <td>Fecha y hora:</td>
-            <td>{{ $historial->fecha }}</td>
-            <td>Diagnóstico:</td>
-            <td>{{ $historial->diagnostico }}</td>
-        </tr>
-        <tr>
-            <td>Tratamiento:</td>
-            <td colspan="3">{{ $historial->tratamiento }}</td>
-        </tr>
-        <tr>
-            <td>Observaciones:</td>
-            <td colspan="3">{{ $historial->observaciones }}</td>
-        </tr>
-        
-        <tr class="section-title">
-            <td colspan="4">MOTIVO DE CONSULTA:</td>
-        </tr>
-        <tr>
-            <td colspan="4">{{ $paciente->motivo_consulta }}</td>
-        </tr>
+            <h2 class="text-lg font-semibold mt-6 mb-4 text-gray-700">Historial Médico #{{ $loop->iteration }}</h2>
+            <table class="table-auto w-full text-sm text-left border-collapse border border-gray-200">
+                <tbody>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Diagnóstico:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $historial->diagnostico }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Tratamiento:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $historial->tratamiento }}</td>
+                    </tr>
+                    <tr>
+                        <td class="font-medium border border-gray-200 px-4 py-2">Observaciones:</td>
+                        <td class="border border-gray-200 px-4 py-2">{{ $historial->observaciones }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <tr class="section-title">
-            <td colspan="4">ENFERMEDAD ACTUAL:</td>
-        </tr>
-        <tr>
-            <td colspan="4">{{ $paciente->enfermedad_actual }}</td>
-        </tr>
-    </table>
-    @endforeach
- 
+            <h2 class="text-lg font-semibold mt-6 mb-4 text-gray-700">Motivo de Consulta</h2>
+            <p class="text-sm bg-gray-100 p-4 rounded-md">{{ $historial->motivo_consulta }}</p>
+
+            <h2 class="text-lg font-semibold mt-6 mb-4 text-gray-700">Enfermedad Actual</h2>
+            <p class="text-sm bg-gray-100 p-4 rounded-md">{{ $historial->enfermedad_actual }}</p>
+        </div>
     @empty
+    <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
+        <p class="font-bold">Sin Historiales</p>
         <p>No se encontraron historiales médicos para este paciente.</p>
+    </div>
     @endforelse
-
-
 </body>
 </html>

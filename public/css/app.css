@@ -148,7 +148,6 @@ img {
     color: #555;
 }
 
-        /* Estilos para la sección de Atención */
 .attention {
     margin: 2rem 0;
 }
@@ -187,7 +186,6 @@ img {
     color: #555;
  }
 
-/* Responsivo */
 @media (max-width: 768px) {
     .beneficio {
         width: 100%;

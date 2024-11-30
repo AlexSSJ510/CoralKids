@@ -24,10 +24,10 @@ class Paciente extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
     
-    public function historialesMedicos()
+    public function historiales()
     {
         return $this->hasMany(HistorialMedico::class, 'paciente_id');
     }

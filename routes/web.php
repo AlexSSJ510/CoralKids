@@ -17,11 +17,6 @@ Route::get('reservar', [ReservarController::class, 'index'])->name('reservar.ind
 Route::get('reservar', [ReservarController::class, 'Formulario'])->name('reservar');
 Route::post('reservar', [ReservarController::class, 'store'])->name('posts.store');
 
-
-Route::get('/dashboard', function () {
-    return view('Inicio');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

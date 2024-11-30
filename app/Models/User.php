@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function paciente()
     {
-        return $this->hasOne(Paciente::class);
+        return $this->hasOne(Paciente::class, 'user_id');
     }
 }

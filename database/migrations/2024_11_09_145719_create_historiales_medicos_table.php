@@ -8,13 +8,15 @@ class CreateHistorialesMedicosTable extends Migration
 {
     public function up()
     {
-        Schema::create('historiales', function (Blueprint $table) {
+        Schema::create('historiales_medicos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('paciente_id'); // Clave foránea a la tabla pacientes
+            $table->unsignedBigInteger('paciente_id');
             $table->dateTime('fecha');
-            $table->string('diagnostico', 255);
+            $table->text('diagnostico');
             $table->text('tratamiento');
-            $table->text('observaciones')->nullable();
+            $table->text('motivo_consulta');
+            $table->text('enfermedad_actual');
+            $table->text('observaciones');
             $table->timestamps();
 
             $table->foreign('paciente_id')->references('id')->on('pacientes')->onDelete('cascade');

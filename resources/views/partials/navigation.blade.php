@@ -20,8 +20,8 @@
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="{{ route('home') }}" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Home</a>
                     <a href="#beneficios" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Beneficios</a>
-                    <a href="#atencion" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Atencion</a>
                     <a href="#reservar" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Reservar</a>
+                    <a href="#atencion" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Atencion</a>
                     <a href="#especialidades" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Especialidades</a>
                     <a href="{{ route('historial') }}" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Historial</a>
                     <a href="{{ route('register') }}" class="text-white hover:text-blue-500 font-medium" style="font-family: 'Times New Roman'; font-size: 24px;">Registrarse</a>
