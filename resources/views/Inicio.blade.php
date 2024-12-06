@@ -16,7 +16,7 @@
                 </a>
             </div>
             <p class="mt-6 text-[#2124a1] text-lg">o llámanos al</p>
-            <p class="text-[#00197d] font-bold text-xl">999 000 111</p>
+            <p class="text-[#00197d] font-bold text-xl">994 113 201</p>
         </div>
     </section>
 </x-layout>   
